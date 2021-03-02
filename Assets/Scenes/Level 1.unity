@@ -3180,6 +3180,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotating Platform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2311698342499596341, guid: 15674d7d370f2a84cba61c24367353b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b287e9ffe32b3fc4fbb1429844826d8c, type: 2}
     - target: {fileID: 2311698342499596347, guid: 15674d7d370f2a84cba61c24367353b4,
         type: 3}
       propertyPath: m_RootOrder
