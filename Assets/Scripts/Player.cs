@@ -3,15 +3,15 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	private Animator anim;
-	private CharacterController controller;
-
 	public float moveSpeed = 50.0f;
 	public float turnSpeed = 400.0f;
 	public float gravity = 20.0f;
 	public float airControl = 10;
-	public float jumpHeight = 5;
+	public float jumpHeight = 3;
 
+	int jumpCount = 2;
+	Animator anim;
+	CharacterController controller;
 	Vector3 input, moveDirection;
 
 	void Start () {
@@ -38,11 +38,13 @@ public class Player : MonoBehaviour {
 
 		if (controller.isGrounded)
 		{
+			jumpCount = 2;
 
 			moveDirection = input;
 
 			if (Input.GetButton("Jump"))
 			{
+				jumpCount--;
 				moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
 			}
 			else
@@ -53,7 +55,11 @@ public class Player : MonoBehaviour {
 		}
 		else
 		{
-			//we are midair
+			if (Input.GetButton("Jump") && jumpCount > 0)
+			{
+				moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity / 2);
+				jumpCount--;
+			}
 			input.y = moveDirection.y;
 			moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
 		}
