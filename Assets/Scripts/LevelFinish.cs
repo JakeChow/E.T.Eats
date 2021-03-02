@@ -7,20 +7,20 @@ public class LevelFinish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
             FindObjectOfType<LevelManager>().LevelBeat();
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
