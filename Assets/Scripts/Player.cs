@@ -42,7 +42,7 @@ public class Player : MonoBehaviour {
 
 			moveDirection = input;
 
-			if (Input.GetButton("Jump"))
+			if (Input.GetButtonDown("Jump"))
 			{
 				jumpCount--;
 				moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour {
 		}
 		else
 		{
-			if (Input.GetButton("Jump") && jumpCount > 0)
+			if (Input.GetButtonDown("Jump") && jumpCount > 0)
 			{
 				moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity / 2);
 				jumpCount--;
