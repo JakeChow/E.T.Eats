@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
 	Animator anim;
 	CharacterController controller;
 	Vector3 input, moveDirection;
+	bool onWall = false;
 
 	void Start () {
 		controller = GetComponent <CharacterController>();
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour {
 
 		input *= moveSpeed;
 
-		if (controller.isGrounded)
+		if (controller.isGrounded || onWall)
 		{
 			jumpCount = 2;
 
@@ -66,5 +67,19 @@ public class Player : MonoBehaviour {
 
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
+	}
+
+	private void OnTriggerEnter(Collider other) {
+		if(other.CompareTag("Wall")) {
+			Debug.Log("On wall");
+			onWall = true;
+		}
+	}
+
+	private void OnTriggerExit(Collider other) {
+		if(other.CompareTag("Wall")) {
+			Debug.Log("Off wall");
+			onWall = false;
+		}
 	}
 }
