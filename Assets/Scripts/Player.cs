@@ -37,7 +37,7 @@ public class Player : MonoBehaviour {
 
 		input *= moveSpeed;
 
-		if (controller.isGrounded || onWall)
+		if (controller.isGrounded)
 		{
 			jumpCount = 2;
 
@@ -53,6 +53,10 @@ public class Player : MonoBehaviour {
 				moveDirection.y = 0.0f;
 			}
 
+		}
+		else if(onWall && moveHorizontal != 0)
+        {
+			moveDirection = input;
 		}
 		else
 		{
@@ -70,14 +74,18 @@ public class Player : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter(Collider other) {
-		if(other.CompareTag("Wall")) {
+		if(other.CompareTag("WallRide")) {
 			Debug.Log("On wall");
 			onWall = true;
 		}
+        if (other.CompareTag("WallJump"))
+        {
+			jumpCount++;
+        }
 	}
 
 	private void OnTriggerExit(Collider other) {
-		if(other.CompareTag("Wall")) {
+		if(other.CompareTag("WallRide")) {
 			Debug.Log("Off wall");
 			onWall = false;
 		}
