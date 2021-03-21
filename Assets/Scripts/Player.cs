@@ -36,6 +36,10 @@ public class Player : MonoBehaviour {
 
 		input *= moveSpeed;
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 		if (controller.isGrounded)
 		{
 			jumpCount = 2;
@@ -53,6 +57,10 @@ public class Player : MonoBehaviour {
 			}
 
 		}
+		else if (onWall && moveHorizontal != 0)
+        {
+			moveDirection = input;
+        }
 		else
 		{
 			if (Input.GetButtonDown("Jump") && jumpCount > 0)
@@ -67,4 +75,25 @@ public class Player : MonoBehaviour {
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
 	}
+<<<<<<< Updated upstream
+=======
+
+	private void OnTriggerEnter(Collider other) {
+		if(other.CompareTag("WallRide")) {
+			Debug.Log("On wall");
+			onWall = true;
+		}
+		if(other.CompareTag("WallJump"))
+        {
+			jumpCount++;
+        }
+	}
+	
+	private void OnTriggerExit(Collider other) {
+		if(other.CompareTag("WallRide")) {
+			Debug.Log("Off wall");
+			onWall = false;
+		}
+	}
+>>>>>>> Stashed changes
 }
