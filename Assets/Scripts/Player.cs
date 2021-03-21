@@ -80,7 +80,7 @@ public class Player : MonoBehaviour {
 		}
         if (other.CompareTag("WallJump"))
         {
-			jumpCount++;
+			jumpCount = 1;
         }
 	}
 
