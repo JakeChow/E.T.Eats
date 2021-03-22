@@ -7,12 +7,15 @@ public class MouseLook : MonoBehaviour
 
     Transform cameraTransform;
     Transform playerTransform;
+    public Transform targetTransform;
 
     public float mouseSens = 1;
 
     private float pitch = 0f;
 
     Vector2 rotation = Vector2.zero;
+
+    Vector3 originalLocal;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,8 @@ public class MouseLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         rotation.y = playerTransform.eulerAngles.y;
+
+        originalLocal = transform.localPosition;
     }
 
     // Update is called once per frame
@@ -34,5 +39,36 @@ public class MouseLook : MonoBehaviour
         rotation.x = Mathf.Clamp(rotation.x, -24, 60);
         playerTransform.eulerAngles = new Vector2(0, rotation.y);
         cameraTransform.eulerAngles = new Vector2(rotation.x, rotation.y);
+
+
+        Vector3 direction = targetTransform.TransformDirection(originalLocal.normalized);
+        float length = originalLocal.magnitude * 8;
+        Vector3 origin = cameraTransform.position + direction * 2;
+
+        float scale = 10;
+
+        RaycastHit hit;
+        if (Physics.Raycast(origin, direction, out hit, length)) { //, layerMask))
+
+            Debug.DrawRay(origin, direction * length, Color.yellow);
+            Debug.Log("Did Hit");
+
+            transform.localPosition = targetTransform.InverseTransformPoint(hit.point);
+
+            //transform.localPosition = cameraTransform.InverseTransformVector(hit.transform.position);
+            //transform.localPosition = direction * hit.distance;
+            //Debug.Log(hit.distance);
+            //transform.localPosition = new Vector3(0, 0.26f, -0.5f);
+
+            //transform.localPosition = transform.InverseTransformPoint(hit.point);
+            //Debug.Log(hit.point);
+            //Debug.Log
+
+        } else {
+            Debug.DrawRay(origin, direction * length, Color.white);
+            Debug.Log("Did not Hit");
+
+            transform.localPosition = originalLocal;
+        }
     }
 }
