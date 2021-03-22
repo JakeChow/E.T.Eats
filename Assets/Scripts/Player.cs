@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
 		
 	}
 
-	void Update() {
+	void FixedUpdate() {
 
 		float moveHorizontal = 0;
 		float moveVertical = 0;
