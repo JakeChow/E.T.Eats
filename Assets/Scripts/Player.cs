@@ -8,7 +8,10 @@ public class Player : MonoBehaviour {
 	public float gravity = 20.0f;
 	public float airControl = 10;
 	public float jumpHeight = 3;
+	public AudioClip jumpSFX;
+	public AudioClip wallrunSFX;
 
+	AudioSource audioSource;
 	int jumpCount = 2;
 	Animator anim;
 	CharacterController controller;
@@ -18,6 +21,8 @@ public class Player : MonoBehaviour {
 	void Start () {
 		controller = GetComponent <CharacterController>();
 		anim = gameObject.GetComponentInChildren<Animator>();
+		audioSource = GetComponent<AudioSource>();
+		
 	}
 
 	void Update() {
@@ -63,6 +68,7 @@ public class Player : MonoBehaviour {
 			{
 				jumpCount--;
 				moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
+				AudioSource.PlayClipAtPoint(jumpSFX, transform.position);
 			}
 			else
 			{
@@ -73,12 +79,18 @@ public class Player : MonoBehaviour {
 		else if(onWall && moveHorizontal != 0)
         {
 			moveDirection = input;
+			if (!audioSource.isPlaying)
+            {
+				audioSource.clip = wallrunSFX;
+				audioSource.Play();
+            }
 		}
 		else
 		{
 			if (Input.GetButtonDown("Jump") && jumpCount > 0)
 			{
 				moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity / 2);
+				AudioSource.PlayClipAtPoint(jumpSFX, transform.position);
 				jumpCount--;
 			}
 			input.y = moveDirection.y;

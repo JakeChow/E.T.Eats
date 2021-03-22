@@ -4,22 +4,14 @@ using UnityEngine;
 
 public class LevelFinish : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public AudioClip finishSFX;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             FindObjectOfType<LevelManager>().LevelBeat();
+            AudioSource.PlayClipAtPoint(finishSFX, transform.position);
             Destroy(gameObject);
         }
     }
