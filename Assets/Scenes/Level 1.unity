@@ -2702,7 +2702,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Green walls give an extra jump
+  m_Text: Green walls give an extra jump (Make sure to use your double jump first)
 --- !u!222 &1017473732
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4107,7 +4107,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Red walls are rideable
+  m_Text: Red walls are rideable (Hold W and D)
 --- !u!222 &1550289393
 CanvasRenderer:
   m_ObjectHideFlags: 0
