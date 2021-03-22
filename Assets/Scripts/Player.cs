@@ -21,17 +21,33 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetKey("w"))
-		{
-			anim.SetInteger("AnimationPar", 1);
-		}
-		else
-		{
-			anim.SetInteger("AnimationPar", 0);
+
+		float moveHorizontal = 0;
+		float moveVertical = 0;
+
+		// Input.GetAxis emulates a joystick and makes the controls sloppy
+		if (Input.GetKey("w")) {
+			moveVertical += 1;
 		}
 
-		float moveHorizontal = Input.GetAxis("Horizontal");
-		float moveVertical = Input.GetAxis("Vertical");
+		if (Input.GetKey("s")) {
+			moveVertical -= 1;
+		}
+
+		if (Input.GetKey("a")) {
+			moveHorizontal -= 1;
+		}
+
+		if (Input.GetKey("d")) {
+			moveHorizontal += 1;
+		}
+
+
+		if (moveHorizontal == 0 && moveVertical == 0) {
+			anim.SetInteger("AnimationPar", 0);
+		} else {
+			anim.SetInteger("AnimationPar", 1);
+        }
 
 		input = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
 
