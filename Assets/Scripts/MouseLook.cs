@@ -11,7 +11,7 @@ public class MouseLook : MonoBehaviour
 
     public float mouseSens = 1;
 
-    private float pitch = 0f;
+    private float pitch = 0;
 
     Vector2 rotation = Vector2.zero;
 
@@ -32,7 +32,7 @@ public class MouseLook : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         rotation.y += Input.GetAxis("Mouse X") * mouseSens;
         rotation.x -= Input.GetAxis("Mouse Y") * mouseSens;
@@ -50,23 +50,14 @@ public class MouseLook : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(origin, direction, out hit, length)) { //, layerMask))
 
-            Debug.DrawRay(origin, direction * length, Color.yellow);
-            Debug.Log("Did Hit");
+            //Debug.DrawRay(origin, direction * length, Color.yellow);
+            //Debug.Log("Did Hit");
 
             transform.localPosition = targetTransform.InverseTransformPoint(hit.point);
 
-            //transform.localPosition = cameraTransform.InverseTransformVector(hit.transform.position);
-            //transform.localPosition = direction * hit.distance;
-            //Debug.Log(hit.distance);
-            //transform.localPosition = new Vector3(0, 0.26f, -0.5f);
-
-            //transform.localPosition = transform.InverseTransformPoint(hit.point);
-            //Debug.Log(hit.point);
-            //Debug.Log
-
         } else {
-            Debug.DrawRay(origin, direction * length, Color.white);
-            Debug.Log("Did not Hit");
+            //Debug.DrawRay(origin, direction * length, Color.white);
+            //Debug.Log("Did not Hit");
 
             transform.localPosition = originalLocal;
         }
