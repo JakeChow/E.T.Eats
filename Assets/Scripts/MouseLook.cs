@@ -48,7 +48,7 @@ public class MouseLook : MonoBehaviour
         float scale = 10;
 
         RaycastHit hit;
-        if (Physics.Raycast(origin, direction, out hit, length)) { //, layerMask))
+        if (Physics.Raycast(origin, direction, out hit, length)) {
 
             //Debug.DrawRay(origin, direction * length, Color.yellow);
             //Debug.Log("Did Hit");
