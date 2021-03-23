@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.1421755, g: 0.477557, b: 0.4705901, a: 1}
+  m_IndirectSpecularColor: {r: 0.19026652, g: 0.23149729, b: 0.19881594, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1414,7 +1414,7 @@ PrefabInstance:
     - target: {fileID: 114551384804589004, guid: 2abf19653d633114faedf3b60dc6c39f,
         type: 3}
       propertyPath: jumpHeight
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2631107230759194810, guid: 2abf19653d633114faedf3b60dc6c39f,
         type: 3}
@@ -4011,7 +4011,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Red walls are rideable (Hold W and D)
+  m_Text: 'Red walls are rideable '
 --- !u!222 &1550289393
 CanvasRenderer:
   m_ObjectHideFlags: 0
