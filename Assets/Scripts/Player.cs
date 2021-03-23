@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 	public float gravity = 20.0f;
 	public float airControl = 10;
 	public float jumpHeight = 3;
+	public float wallRideSpeedMultiplier = 1.5f;
 	public AudioClip jumpSFX;
 	public AudioClip wallrunSFX;
 
@@ -25,7 +26,7 @@ public class Player : MonoBehaviour {
 		
 	}
 
-	void FixedUpdate() {
+	void Update() {
 
 		float moveHorizontal = 0;
 		float moveVertical = 0;
@@ -76,9 +77,9 @@ public class Player : MonoBehaviour {
 			}
 
 		}
-		else if(onWall && moveHorizontal != 0)
+		else if(onWall && (moveHorizontal != 0 || moveVertical != 0))
         {
-			moveDirection = input;
+			moveDirection = input * wallRideSpeedMultiplier;
 			if (!audioSource.isPlaying)
             {
 				audioSource.clip = wallrunSFX;
