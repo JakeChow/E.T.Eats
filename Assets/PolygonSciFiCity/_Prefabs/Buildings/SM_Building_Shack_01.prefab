@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4154841941920556}
   - component: {fileID: 33335905663773638}
   - component: {fileID: 23371192238909590}
-  - component: {fileID: 4753447472061364166}
+  - component: {fileID: -2845080376610444192}
   m_Layer: 0
   m_Name: SM_Building_Shack_01
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4753447472061364166
+--- !u!65 &-2845080376610444192
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

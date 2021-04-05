@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4909988165087752}
   - component: {fileID: 33780901586249058}
   - component: {fileID: 23595050195209112}
-  - component: {fileID: -8420693500910621035}
+  - component: {fileID: 4291943161176726697}
   m_Layer: 0
   m_Name: SM_Bld_Security_WatchStation_01
   m_TagString: Untagged
@@ -160,7 +160,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-8420693500910621035
+--- !u!65 &4291943161176726697
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

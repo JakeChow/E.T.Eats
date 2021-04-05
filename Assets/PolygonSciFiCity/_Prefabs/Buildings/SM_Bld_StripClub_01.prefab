@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4059622056463564}
   - component: {fileID: 33921938968737750}
   - component: {fileID: 23515216998646324}
-  - component: {fileID: 6255397612810507524}
+  - component: {fileID: 1393645064030499496}
   m_Layer: 0
   m_Name: SM_Bld_StripClub_01
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6255397612810507524
+--- !u!65 &1393645064030499496
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

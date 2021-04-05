@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4788729921527788}
   - component: {fileID: 33269003864501062}
   - component: {fileID: 23259728188570864}
-  - component: {fileID: -6825106683344458990}
+  - component: {fileID: 6267700044224422046}
   m_Layer: 0
   m_Name: SM_Bld_LandingPad_01
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-6825106683344458990
+--- !u!65 &6267700044224422046
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

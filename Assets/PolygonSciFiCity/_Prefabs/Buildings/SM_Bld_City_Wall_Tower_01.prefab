@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4532601739804444}
   - component: {fileID: 33924146874672244}
   - component: {fileID: 23754637625146526}
-  - component: {fileID: 2827430981621709379}
+  - component: {fileID: 6414362070086248896}
   m_Layer: 0
   m_Name: SM_Bld_City_Wall_Tower_01
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2827430981621709379
+--- !u!65 &6414362070086248896
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4712475898776088}
   - component: {fileID: 33731353814989284}
   - component: {fileID: 23478285483818488}
-  - component: {fileID: -6418097209403629524}
+  - component: {fileID: -4949826893556928550}
   m_Layer: 0
   m_Name: SM_Bld_City_Wall_01
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-6418097209403629524
+--- !u!65 &-4949826893556928550
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

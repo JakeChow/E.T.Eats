@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4657839219652416}
   - component: {fileID: 33790264385462606}
   - component: {fileID: 23242089189434580}
-  - component: {fileID: 2539833692678547076}
+  - component: {fileID: -3995619654922478751}
   m_Layer: 0
   m_Name: SM_Bld_Underpass_01
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2539833692678547076
+--- !u!65 &-3995619654922478751
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

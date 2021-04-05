@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4508807577242800}
   - component: {fileID: 33946050355574350}
   - component: {fileID: 23542593586349736}
-  - component: {fileID: -670526557928666490}
+  - component: {fileID: -8275560229489935303}
   m_Layer: 0
   m_Name: SM_Bld_FoodHole_01
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-670526557928666490
+--- !u!65 &-8275560229489935303
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

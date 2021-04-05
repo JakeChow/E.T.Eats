@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4672843930267194}
   - component: {fileID: 33197025012848598}
   - component: {fileID: 23248051345065368}
-  - component: {fileID: 2307171737534981260}
+  - component: {fileID: -4363225567114005212}
   m_Layer: 0
   m_Name: SM_Bld_Roof_Pagoda_02
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2307171737534981260
+--- !u!65 &-4363225567114005212
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

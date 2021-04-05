@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4931494394370980}
   - component: {fileID: 33447277898246246}
   - component: {fileID: 23125265845201494}
-  - component: {fileID: -3633011294938384902}
+  - component: {fileID: 5377856943252874552}
   m_Layer: 0
   m_Name: SM_Bld_Large_Part_02
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-3633011294938384902
+--- !u!65 &5377856943252874552
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4167107128406550}
   - component: {fileID: 33769797643683062}
   - component: {fileID: 23466267470889660}
-  - component: {fileID: -5772247602119066196}
+  - component: {fileID: -5217098608467385428}
   m_Layer: 0
   m_Name: SM_Bld_Bank_01
   m_TagString: Untagged
@@ -162,7 +162,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-5772247602119066196
+--- !u!65 &-5217098608467385428
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

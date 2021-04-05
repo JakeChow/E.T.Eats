@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 4946131603998220}
   - component: {fileID: 33440511701773410}
   - component: {fileID: 23151947000562494}
-  - component: {fileID: 5781777099787552289}
+  - component: {fileID: 167446048300690076}
   m_Layer: 0
   m_Name: SM_Bld_StripClub_Interior_01
   m_TagString: Untagged
@@ -324,7 +324,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5781777099787552289
+--- !u!65 &167446048300690076
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

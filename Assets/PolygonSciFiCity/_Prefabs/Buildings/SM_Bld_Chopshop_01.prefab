@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4612130668171872}
   - component: {fileID: 33285537142222178}
   - component: {fileID: 23856934528178094}
-  - component: {fileID: -7197208873965410111}
+  - component: {fileID: 6080508173587981198}
   m_Layer: 0
   m_Name: SM_Bld_Chopshop_01
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-7197208873965410111
+--- !u!65 &6080508173587981198
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

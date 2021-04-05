@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4516777248440080}
   - component: {fileID: 33440597714066628}
   - component: {fileID: 23440964819335718}
-  - component: {fileID: -782365574197690026}
+  - component: {fileID: 1123318894738031980}
   m_Layer: 0
   m_Name: SM_Bld_Advanced_Doorway_01
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-782365574197690026
+--- !u!65 &1123318894738031980
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

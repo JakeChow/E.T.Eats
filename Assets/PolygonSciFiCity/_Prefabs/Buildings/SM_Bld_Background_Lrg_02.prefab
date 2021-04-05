@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4097076603240660}
   - component: {fileID: 33501577526091126}
   - component: {fileID: 23637821835263844}
-  - component: {fileID: -1667077336132670379}
+  - component: {fileID: 642158507112151061}
   m_Layer: 0
   m_Name: SM_Bld_Background_Lrg_02
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-1667077336132670379
+--- !u!65 &642158507112151061
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

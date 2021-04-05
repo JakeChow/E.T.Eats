@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4649104567197904}
   - component: {fileID: 33089198317106782}
   - component: {fileID: 23770472985204074}
-  - component: {fileID: -5775706753109435299}
+  - component: {fileID: -1733920699983495201}
   m_Layer: 0
   m_Name: SM_Bld_Background_Med_09
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &-5775706753109435299
+--- !u!65 &-1733920699983495201
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33023723772617928}
   - component: {fileID: 23982920828697252}
   - component: {fileID: 95152929196790024}
-  - component: {fileID: -6416656460701968096}
+  - component: {fileID: -4823582386585347054}
   m_Layer: 0
   m_Name: SM_Bld_Section_Door_04
   m_TagString: Untagged
@@ -101,7 +101,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &-6416656460701968096
+--- !u!65 &-4823582386585347054
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
