@@ -57,6 +57,7 @@ public class Player : MonoBehaviour {
         }
 
 		input = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
+
 		if (Input.GetKey("w") && Input.GetKey(KeyCode.LeftShift))
 		{
 			input *= sprintSpeed;
@@ -108,6 +109,12 @@ public class Player : MonoBehaviour {
 
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
+		if (input.magnitude > .01f)
+		{
+			float cameraYawRotation = Camera.main.transform.eulerAngles.y;
+			Quaternion newRotation = Quaternion.Euler(0f, cameraYawRotation, 0f);
+			transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * 10);
+		}
 	}
 
 
