@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public float moveSpeed = 50.0f;
+	public float walkSpeed = 10.0f;
+	public float sprintSpeed = 15.0f;
 	public float turnSpeed = 400.0f;
 	public float gravity = 20.0f;
 	public float airControl = 10;
@@ -56,14 +57,21 @@ public class Player : MonoBehaviour {
         }
 
 		input = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
-
-		input *= moveSpeed;
+		if (Input.GetKey("w") && Input.GetKey(KeyCode.LeftShift))
+		{
+			input *= sprintSpeed;
+		}
+        else
+        {
+			input *= walkSpeed;
+		}
 
 		if (controller.isGrounded)
 		{
 			jumpCount = 2;
 
 			moveDirection = input;
+
 
 			if (Input.GetButtonDown("Jump"))
 			{
@@ -101,6 +109,7 @@ public class Player : MonoBehaviour {
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
 	}
+
 
 	private void OnTriggerEnter(Collider other) {
 		if(other.CompareTag("WallRide")) {
