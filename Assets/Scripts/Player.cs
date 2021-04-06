@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
 	public float wallRideSpeedMultiplier = 1.5f;
 	public AudioClip jumpSFX;
 	public AudioClip wallrunSFX;
+	public DeathReset deathReset;
 
 	AudioSource audioSource;
 	int jumpCount = 2;
@@ -123,10 +124,10 @@ public class Player : MonoBehaviour {
 		if(other.CompareTag("WallRide")) {
 			Debug.Log("On wall");
 			onWall = true;
-		}
-        if (other.CompareTag("WallJump"))
-        {
+		} else if (other.CompareTag("WallJump")) {
 			jumpCount = 1;
+        } else if (other.CompareTag("Projectile")) {
+			deathReset.ResetCheckpoint();
         }
 	}
 
