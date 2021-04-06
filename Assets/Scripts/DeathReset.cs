@@ -5,11 +5,8 @@ using UnityEngine;
 public class DeathReset : MonoBehaviour
 {
     public CheckPoint point;
-
-    void Start()
-    {
-        
-    }
+    public AudioClip deathSFX;
+    public Transform PlayerLocation;
 
 
     void Update()
