@@ -19,13 +19,11 @@ public class DeathReset : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Player entered");
-
+        
         if (other.CompareTag("Player"))
         {
-            if (point.Checked())
+            if (CheckPoint.check)
             {
-                Debug.Log("Player entered");
                 point.JumpToCheckpoint();
             }
         }
