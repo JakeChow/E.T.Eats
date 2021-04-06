@@ -13,10 +13,13 @@ public class CheckPoint : MonoBehaviour
     public GameObject CheckpointChecked;
     public GameObject CheckpointUnchecked;
     public static bool check = false;
+    public AudioClip checkpointSFX;
+    public AudioSource source;
 
     void Start()
     {
         checkpointLocation = CheckpointChecked.transform;
+        source = gameObject.GetComponent<AudioSource>();
     }
 
     
@@ -32,6 +35,7 @@ public class CheckPoint : MonoBehaviour
             check = true;
             CheckpointChecked.SetActive(true);
             CheckpointUnchecked.SetActive(false);
+            AudioSource.PlayClipAtPoint(checkpointSFX, CheckpointChecked.transform.position);
         }
     }
 
