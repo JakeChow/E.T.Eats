@@ -5,19 +5,17 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     
-    private GameObject player;
+    public GameObject player;
 
-    private bool check = false;
+   
     private Transform checkpointLocation;
 
     public GameObject CheckpointChecked;
     public GameObject CheckpointUnchecked;
-
-    
+    public static bool check = false;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         checkpointLocation = CheckpointChecked.transform;
     }
 
@@ -31,21 +29,15 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            check = true;
             CheckpointChecked.SetActive(true);
             CheckpointUnchecked.SetActive(false);
-            check = true;
         }
     }
 
     public void JumpToCheckpoint()
     {
-            Debug.Log("Hello");
-            player.transform.position = checkpointLocation.position;
-    
-    }
-
-    public bool Checked()
-    {
-        return check;
+        player.transform.position = checkpointLocation.position;
+        player.transform.rotation = checkpointLocation.rotation;
     }
 }
