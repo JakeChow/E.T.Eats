@@ -39,9 +39,13 @@ public class CheckPoint : MonoBehaviour
 
     public void JumpToCheckpoint()
     {
-        if (check)
-        {
+            Debug.Log("Hello");
             player.transform.position = checkpointLocation.position;
-        }
+    
+    }
+
+    public bool Checked()
+    {
+        return check;
     }
 }

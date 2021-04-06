@@ -109,6 +109,7 @@ public class Player : MonoBehaviour {
 
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
+
 		if (input.magnitude > .01f)
 		{
 			float cameraYawRotation = Camera.main.transform.eulerAngles.y;
