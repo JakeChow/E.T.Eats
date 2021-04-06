@@ -6,6 +6,11 @@ public class LevelFinish : MonoBehaviour
 {
     public AudioClip finishSFX;
 
+    public void Start()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
