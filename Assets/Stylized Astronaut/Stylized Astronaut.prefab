@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 4268597916284530}
   - component: {fileID: 95340733316770424}
   - component: {fileID: 143350241100547368}
+  - component: {fileID: 4284237191934896298}
   - component: {fileID: 114551384804589004}
   - component: {fileID: 1605004977}
   - component: {fileID: 2631107230759194810}
@@ -359,6 +360,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.125, z: -0.01}
+--- !u!114 &4284237191934896298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147752367711628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801797ce0e2298449adbf6512a1d95ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  healthSlider: {fileID: 0}
 --- !u!114 &114551384804589004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,11 +386,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e19da6a22259d4299a67d51a3c65f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  walkSpeed: 10
+  sprintSpeed: 15
   turnSpeed: 150
   gravity: 30
   airControl: 10
   jumpHeight: 4
+  wallRideSpeedMultiplier: 1.5
   jumpSFX: {fileID: 8300000, guid: 6050cbd79418d1f4a8d4c66e43e9b12d, type: 3}
   wallrunSFX: {fileID: 8300000, guid: 49092d9d8f2167043b14a332dc9411c8, type: 3}
 --- !u!54 &1605004977

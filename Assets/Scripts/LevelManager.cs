@@ -22,4 +22,10 @@ public class LevelManager : MonoBehaviour
         gameText.text = "YOU WIN!";
         gameText.gameObject.SetActive(true);
     }
+
+    public void LevelLost()
+    {
+        gameText.text = "YOU LOST!";
+        gameText.gameObject.SetActive(true);
+    }
 }
