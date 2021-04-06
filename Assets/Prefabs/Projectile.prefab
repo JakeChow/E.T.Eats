@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91052af7cfd08de4284e96b5eae39c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 10
   accuracy: 100
   fireRate: 10
   muzzlePrefab: {fileID: 0}
