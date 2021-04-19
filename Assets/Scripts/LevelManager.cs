@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public Text gameText;
+    public string nextLevel;
 
     void Start()
     {
@@ -22,11 +23,25 @@ public class LevelManager : MonoBehaviour
     {
         gameText.text = "YOU WIN!";
         gameText.gameObject.SetActive(true);
+       
+        if (!string.IsNullOrEmpty(nextLevel))
+        {
+            Invoke("LoadNextLevel", 2);
+        }
     }
 
     public void LevelLost()
     {
         gameText.text = "YOU LOST!";
         gameText.gameObject.SetActive(true);
+    }
+    void LoadNextLevel()
+    {
+        SceneManager.LoadScene(nextLevel);
+    }
+
+    void LoadCurrentLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
