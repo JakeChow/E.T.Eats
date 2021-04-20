@@ -11,7 +11,7 @@ public class Player : MonoBehaviour {
 	public float jumpHeight = 3;
 	public float wallRideSpeedMultiplier = 1.5f;
 	public float springJump = 30;
-	public float dashSpeed = 2;
+	public float dashSpeed = 30;
 	public AudioClip jumpSFX;
 	public AudioClip wallrunSFX;
 	public DeathReset deathReset;
@@ -70,7 +70,6 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-			Debug.Log("Dash");
 			input *= dashSpeed;
 		}
 
@@ -127,7 +126,6 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
 		if(other.CompareTag("WallRide")) {
-			Debug.Log("On wall");
 			onWall = true;
 		} else if (other.CompareTag("WallJump")) {
 			jumpCount = 1;
@@ -137,7 +135,6 @@ public class Player : MonoBehaviour {
 
 		if (other.gameObject.CompareTag("Spring"))
 		{
-			Debug.Log("Touching");
 			moveDirection.y = Mathf.Sqrt(2 * springJump * gravity / 2);
 			input.y = moveDirection.y;
 			moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
@@ -146,7 +143,6 @@ public class Player : MonoBehaviour {
 
 	private void OnTriggerExit(Collider other) {
 		if(other.CompareTag("WallRide")) {
-			Debug.Log("Off wall");
 			onWall = false;
 		}
 
@@ -156,7 +152,6 @@ public class Player : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Spring"))
         {
-			Debug.Log("Touching");
 			moveDirection.y = Mathf.Sqrt(2 * springJump * gravity / 2);
 			input.y = moveDirection.y;
 			moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
