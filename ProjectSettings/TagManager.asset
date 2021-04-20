@@ -8,6 +8,7 @@ TagManager:
   - WallJump
   - Projectile
   - WanderPoint
+  - Spring
   layers:
   - Default
   - TransparentFX

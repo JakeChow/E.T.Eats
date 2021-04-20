@@ -4,31 +4,37 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	public float walkSpeed = 10.0f;
-	public float sprintSpeed = 15.0f;
 	public float turnSpeed = 400.0f;
 	public float gravity = 20.0f;
 	public float airControl = 10;
 	public float jumpHeight = 3;
 	public float wallRideSpeedMultiplier = 1.5f;
+	public float springJump = 30;
+	public float dashSpeed = 30;
+	public float dashCooldown = 2;
 	public AudioClip jumpSFX;
 	public AudioClip wallrunSFX;
 	public DeathReset deathReset;
 
+	Rigidbody rb;
+	float timeStamp;
 	AudioSource audioSource;
 	int jumpCount = 2;
 	Animator anim;
 	CharacterController controller;
 	Vector3 input, moveDirection;
 	bool onWall = false;
+	bool isDashing = false;
 
 	void Start () {
 		controller = GetComponent <CharacterController>();
 		anim = gameObject.GetComponentInChildren<Animator>();
 		audioSource = GetComponent<AudioSource>();
-		
+		rb = GetComponent<Rigidbody>();
+	
 	}
 
-	void Update() {
+	void Update(){
 
 		float moveHorizontal = 0;
 		float moveVertical = 0;
@@ -59,13 +65,15 @@ public class Player : MonoBehaviour {
 
 		input = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
 
-		if (Input.GetKey("w") && Input.GetKey(KeyCode.LeftShift))
+		if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("d") || Input.GetKey("s"))
 		{
-			input *= sprintSpeed;
-		}
-        else
-        {
 			input *= walkSpeed;
+		}
+
+		if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
+		{
+			isDashing = true;
+			StartCoroutine(TimerRoutine());
 		}
 
 		if (controller.isGrounded)
@@ -119,22 +127,46 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-
-	private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other) {
 		if(other.CompareTag("WallRide")) {
-			Debug.Log("On wall");
 			onWall = true;
+			jumpCount = 1;
 		} else if (other.CompareTag("WallJump")) {
 			jumpCount = 1;
         } else if (other.CompareTag("Projectile")) {
 			deathReset.ResetCheckpoint();
         }
+
+		if (other.gameObject.CompareTag("Spring"))
+		{
+			moveDirection.y = Mathf.Sqrt(2 * springJump * gravity / 2);
+			input.y = moveDirection.y;
+			moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
+		}
 	}
 
 	private void OnTriggerExit(Collider other) {
 		if(other.CompareTag("WallRide")) {
-			Debug.Log("Off wall");
 			onWall = false;
 		}
+
+	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Spring"))
+        {
+			moveDirection.y = Mathf.Sqrt(2 * springJump * gravity / 2);
+			input.y = moveDirection.y;
+			moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
+		}
+    }
+
+	private IEnumerator TimerRoutine()
+    {
+		Debug.Log("Dashing");
+		input *= dashSpeed;
+		yield return new WaitForSeconds(dashCooldown);
+		isDashing = false;
 	}
 }
