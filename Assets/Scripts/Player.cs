@@ -4,7 +4,6 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	public float walkSpeed = 10.0f;
-	public float sprintSpeed = 15.0f;
 	public float turnSpeed = 400.0f;
 	public float gravity = 20.0f;
 	public float airControl = 10;
@@ -12,11 +11,13 @@ public class Player : MonoBehaviour {
 	public float wallRideSpeedMultiplier = 1.5f;
 	public float springJump = 30;
 	public float dashSpeed = 30;
+	public float dashCooldown = 2;
 	public AudioClip jumpSFX;
 	public AudioClip wallrunSFX;
 	public DeathReset deathReset;
-	Rigidbody rb;
 
+	Rigidbody rb;
+	float timeStamp;
 	AudioSource audioSource;
 	int jumpCount = 2;
 	Animator anim;
@@ -30,10 +31,11 @@ public class Player : MonoBehaviour {
 		anim = gameObject.GetComponentInChildren<Animator>();
 		audioSource = GetComponent<AudioSource>();
 		rb = GetComponent<Rigidbody>();
-
+	
 	}
 
 	void Update(){
+
 		float moveHorizontal = 0;
 		float moveVertical = 0;
 
@@ -68,9 +70,10 @@ public class Player : MonoBehaviour {
 			input *= walkSpeed;
 		}
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-			input *= dashSpeed;
+		if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
+		{
+			isDashing = true;
+			StartCoroutine(TimerRoutine());
 		}
 
 		if (controller.isGrounded)
@@ -157,4 +160,12 @@ public class Player : MonoBehaviour {
 			moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
 		}
     }
+
+	private IEnumerator TimerRoutine()
+    {
+		Debug.Log("Dashing");
+		input *= dashSpeed;
+		yield return new WaitForSeconds(dashCooldown);
+		isDashing = false;
+	}
 }
