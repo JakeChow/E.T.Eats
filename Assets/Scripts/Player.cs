@@ -130,6 +130,7 @@ public class Player : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
 		if(other.CompareTag("WallRide")) {
 			onWall = true;
+			jumpCount = 1;
 		} else if (other.CompareTag("WallJump")) {
 			jumpCount = 1;
         } else if (other.CompareTag("Projectile")) {
