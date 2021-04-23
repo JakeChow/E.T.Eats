@@ -11,15 +11,10 @@ public class SpringBehavior : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine("PlayAnim");
+            gameObject.GetComponent<Animator>().SetTrigger("springActivate");
             AudioSource.PlayClipAtPoint(springSFX, transform.position);
             
         }
     }
-    IEnumerator PlayAnim()
-    {
-        gameObject.GetComponent<Animator>().SetTrigger("springActivate");
-        yield return new WaitForSeconds(2);
-        gameObject.GetComponent<Animator>().ResetTrigger("springActivate");
-    }
+
 }
