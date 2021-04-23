@@ -8,7 +8,6 @@ public class DeathReset : MonoBehaviour
     public AudioClip deathSFX;
     public Transform playerLocation;
     public Transform spawnPosition;
-    public CharacterController controller;
 
 
     void Update()
