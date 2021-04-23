@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class Player : MonoBehaviour {
 
@@ -11,7 +10,6 @@ public class Player : MonoBehaviour {
 	public float wallRideSpeedMultiplier = 1.5f;
 	public float springJump = 30;
 	public float dashSpeed = 30;
-	public float dashCooldown = 2;
 	public AudioClip jumpSFX;
 	public AudioClip wallrunSFX;
 	public DeathReset deathReset;
@@ -25,6 +23,8 @@ public class Player : MonoBehaviour {
 	Vector3 input, moveDirection;
 	bool onWall = false;
 	bool isDashing = false;
+
+	private bool hasDash = true;
 
 	void Start () {
 		controller = GetComponent <CharacterController>();
@@ -70,14 +70,15 @@ public class Player : MonoBehaviour {
 			input *= walkSpeed;
 		}
 
-		if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
+		if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && hasDash && !controller.isGrounded)
 		{
-			isDashing = true;
-			StartCoroutine(TimerRoutine());
+			input *= dashSpeed;
+			hasDash = false;
 		}
 
 		if (controller.isGrounded)
 		{
+			hasDash = true;
 			jumpCount = 2;
 
 			moveDirection = input;
@@ -161,12 +162,4 @@ public class Player : MonoBehaviour {
 			moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
 		}
     }
-
-	private IEnumerator TimerRoutine()
-    {
-		Debug.Log("Dashing");
-		input *= dashSpeed;
-		yield return new WaitForSeconds(dashCooldown);
-		isDashing = false;
-	}
 }
