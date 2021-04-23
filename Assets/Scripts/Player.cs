@@ -70,12 +70,6 @@ public class Player : MonoBehaviour {
 			input *= walkSpeed;
 		}
 
-		if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && hasDash && !controller.isGrounded)
-		{
-			input *= dashSpeed;
-			hasDash = false;
-		}
-
 		if (controller.isGrounded)
 		{
 			hasDash = true;
@@ -115,6 +109,17 @@ public class Player : MonoBehaviour {
 			}
 			input.y = moveDirection.y;
 			moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
+		}
+
+		if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && hasDash && !controller.isGrounded)
+		{
+			//print("DASH");
+			//print(dashSpeed);
+			//print(input.magnitude);
+			//input *= dashSpeed;
+			//print(input.magnitude);
+			controller.Move(gameObject.transform.forward * dashSpeed);
+			hasDash = false;
 		}
 
 		moveDirection.y -= gravity * Time.deltaTime;
