@@ -6,7 +6,9 @@ public class DeathReset : MonoBehaviour
 {
     public CheckPoint point;
     public AudioClip deathSFX;
-    public Transform PlayerLocation;
+    public Transform playerLocation;
+    public Transform spawnPosition;
+    public CharacterController controller;
 
 
     void Update()
@@ -25,6 +27,8 @@ public class DeathReset : MonoBehaviour
     public void ResetCheckpoint() {
         if (CheckPoint.check) {
             point.JumpToCheckpoint();
+        } else {
+            playerLocation.transform.position = spawnPosition.position;
         }
     }
 }
