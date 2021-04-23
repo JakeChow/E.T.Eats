@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
 	public float dashSpeed = 30;
 	public AudioClip jumpSFX;
 	public AudioClip wallrunSFX;
+	public AudioClip dashSFX;
 	public DeathReset deathReset;
 
 	Rigidbody rb;
@@ -118,6 +119,7 @@ public class Player : MonoBehaviour {
 			//print(input.magnitude);
 			//input *= dashSpeed;
 			//print(input.magnitude);
+			AudioSource.PlayClipAtPoint(dashSFX, transform.position);
 			controller.Move(gameObject.transform.forward * dashSpeed);
 			hasDash = false;
 		}

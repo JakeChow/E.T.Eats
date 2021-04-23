@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8895192502876465276}
   - component: {fileID: 8895192502876465279}
   - component: {fileID: 8895192502876465278}
+  - component: {fileID: 5105143175243898823}
+  - component: {fileID: 930074826}
   m_Layer: 0
   m_Name: Spring
   m_TagString: Spring
@@ -26,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8895192502876465273}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.853415, y: 24.020683, z: -10.771093}
   m_LocalScale: {x: 2.249, y: 2.249, z: 2.249}
   m_Children: []
@@ -93,3 +95,35 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &5105143175243898823
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895192502876465273}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0bfb166076918141999aa44dd8d0889, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &930074826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895192502876465273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43f90acb49cf0e4cbf5f4fbfd3b5935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springSFX: {fileID: 8300000, guid: 04913b44c64e80d499c7f6e26335539e, type: 3}

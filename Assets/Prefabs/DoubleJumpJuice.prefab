@@ -108,3 +108,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSFX: {fileID: 8300000, guid: 24fcd93e4cbf4fe4aaed7727113d37bb, type: 3}
   coolDown: 3
+
