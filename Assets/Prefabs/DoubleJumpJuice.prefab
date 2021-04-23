@@ -106,5 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d9a404a25819c74ca8621a021c29e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectSFX: {fileID: 8300000, guid: 04913b44c64e80d499c7f6e26335539e, type: 3}
-  coolDown: 10
+  collectSFX: {fileID: 8300000, guid: 24fcd93e4cbf4fe4aaed7727113d37bb, type: 3}
+  coolDown: 3
+
