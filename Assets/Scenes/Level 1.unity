@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.19625664, g: 0.09740565, b: 0.119502746, a: 1}
+  m_IndirectSpecularColor: {r: 0.19634691, g: 0.09731356, b: 0.119633995, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6665,6 +6665,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8825235812130493788, guid: baa04ca9802b2094abdd7b6d85fe881d,
         type: 3}
+      propertyPath: m_Text
+      value: Follow and collect the red coins. Press SHIFT to dash!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825235812130493788, guid: baa04ca9802b2094abdd7b6d85fe881d,
+        type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 1
       objectReference: {fileID: 0}
@@ -9266,7 +9271,7 @@ PrefabInstance:
     - target: {fileID: 7804876803316119224, guid: 4ae4a8bf360a2a04db0c0973468f334a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.006996746
+      value: 0.0069967476
       objectReference: {fileID: 0}
     - target: {fileID: 7804876803316119224, guid: 4ae4a8bf360a2a04db0c0973468f334a,
         type: 3}
@@ -9276,7 +9281,7 @@ PrefabInstance:
     - target: {fileID: 7804876803316119224, guid: 4ae4a8bf360a2a04db0c0973468f334a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0052247983
+      value: -0.0052247993
       objectReference: {fileID: 0}
     - target: {fileID: 7804876803778769299, guid: 4ae4a8bf360a2a04db0c0973468f334a,
         type: 3}
@@ -9316,7 +9321,7 @@ PrefabInstance:
     - target: {fileID: 7804876804179400605, guid: 4ae4a8bf360a2a04db0c0973468f334a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.036096364
+      value: 0.036096375
       objectReference: {fileID: 0}
     - target: {fileID: 7804876804179400605, guid: 4ae4a8bf360a2a04db0c0973468f334a,
         type: 3}
@@ -9326,7 +9331,7 @@ PrefabInstance:
     - target: {fileID: 7804876804179400605, guid: 4ae4a8bf360a2a04db0c0973468f334a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.026954852
+      value: -0.026954858
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ae4a8bf360a2a04db0c0973468f334a, type: 3}
