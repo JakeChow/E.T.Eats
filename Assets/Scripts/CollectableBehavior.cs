@@ -12,7 +12,10 @@ public class CollectableBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (scoreText == null) {
+            GameObject scoreTextObject = GameObject.FindGameObjectWithTag("ScoreText");
+            scoreText = scoreTextObject.GetComponent<Text>();
+        }
     }
 
     // Update is called once per frame

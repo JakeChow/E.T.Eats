@@ -9,6 +9,9 @@ TagManager:
   - Projectile
   - WanderPoint
   - Spring
+  - Enemy
+  - ScoreCanvas
+  - ScoreText
   layers:
   - Default
   - TransparentFX
