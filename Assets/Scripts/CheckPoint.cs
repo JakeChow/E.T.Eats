@@ -20,6 +20,7 @@ public class CheckPoint : MonoBehaviour
     {
         checkpointLocation = CheckpointChecked.transform;
         source = gameObject.GetComponent<AudioSource>();
+        check = false;
     }
 
     
